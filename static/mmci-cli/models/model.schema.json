@@ -25,19 +25,17 @@
     },
     "capabilities": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
-        "model_specific_rule",
         "interest",
         "inflation",
         "outputgap",
         "output",
         "mp_shock",
-        "fiscal_shock"
+        "fiscal_shock",
+        "rules"
       ],
       "properties": {
-        "model_specific_rule": {
-          "type": "boolean"
-        },
         "interest": {
           "type": "boolean"
         },
@@ -55,8 +53,22 @@
         },
         "fiscal_shock": {
           "type": "boolean"
+        },
+        "rules":{
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
         }
       }
+    },
+    "msr": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 33,
+      "maxItems": 33
     },
     "description": {
       "type": "object",
